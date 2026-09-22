@@ -36,4 +36,12 @@ describe('HmctsGlobalFooterComponent', () => {
   it('should be created by angular', () => {
     expect(fixture).not.toBeNull();
   });
+
+  it('should display the GOV.UK crown', () => {
+    const crown = fixture.nativeElement.querySelector('.govuk-footer__crown');
+
+    expect(crown).not.toBeNull();
+    expect(crown.getAttribute('aria-hidden')).toBe('true');
+    expect(crown.getAttribute('viewBox')).toBe('0 0 64 60');
+  });
 });
